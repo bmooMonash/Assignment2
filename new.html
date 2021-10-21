@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body class="page">
+    <div>
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+                <div>
+                    <h1>Shark Attacks Around the World</h1>
+                    <divs class="IntroText">
+                        This visualisation explores the shark attacks that has occurred around the world.
+                        <br><br>
+                        This will first show the locations of all attacks marked by fatal and non fatal attacks. Then it the attacks is broken down into 3 charts.
+                        The last section is an overview of species of sharks involved in the attacks.
+                        </divs>
+                    </div>
+                </div>
+            <div class="pure-u-1-12"></div>
+            <div class="pure-u-3-12">
+                <div >
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/sharkIMG.png">
+                </div>
+            </div>
+        </div>>
+        <br><br>
+        <hr><br><br>
+    <h2>Attacks Around the Globe<h2>
+    <div class = "pure-g">
+        <div class = "pure-u-2-3">
+            <div id="vis" class = "chart" ></div>
+        </div>
+        <div class = "pure-u-1-3">
+            <div class="chartText">
+                <p>A shark attack is an attack on a human by a shark. Every year, around 80 unprovoked attacks are reported worldwide. 
+                    Despite their rarity, many people fear shark attacks after occasional serial attacks, 
+                    such as the Jersey Shore shark attacks of 1916, and horror fiction and films such as the Jaws series. 
+                    Out of more than 489 shark species, only three of them are responsible for a double-digit number of fatal, 
+                    unprovoked attacks on humans: the great white, tiger, and bull.</p>
+            </div>
+        </div>
+    </div> 
+    <br><br>
+    <hr>
+    <h2 style="text-align: center; padding-bottom: 1.5%; ">Data Breakdown</h2>
+    <div>
+        <div>
+            <div id="vis2"></div>
+        </div>
+    </div>
+    <br><br>
+    <div id="vis4" class="centerchart"></div>
+    <br><br>
+    <hr>
+    <h2>Shark Species</h2>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="vis5"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div style="color: #eaeda8; text-align: center; font-size: 20px;">
+                <div class="tab">
+                    <button class="tabtabs" onclick="Shark('Blacktip Shark', event)">Blacktip Shark</button>
+                    <button class="tabtabs" onclick="Shark('Bronze Whaler Shark', event)">Bronze Whaler Shark</button>
+                    <button class="tabtabs" onclick="Shark('Bull Shark', event)">Bull Shark</button>
+                    <button class="tabtabs" onclick="Shark('Goblin Shark', event)">Goblin Shark</button>
+                    <button class="tabtabs" onclick="Shark('Great White Shark', event)">Great White Shark</button>
+                    <button class="tabtabs" onclick="Shark('Hammerhead Shark', event)">Hammerhead Shark</button>
+                    <button class="tabtabs" onclick="Shark('Tiger Shark', event)">Tiger Shark</button>
+                </div> 
+                <div id="Blacktip Shark" class="tabsharks">
+                    <h3>Blacktip Shark</h3>
+                    <p>The blacktip shark (Carcharhinus limbatus) is a species of requiem shark, and part of the family Carcharhinidae. 
+                        It is common to coastal tropical and subtropical waters around the world, including brackish habitats.</p>
+                    <p>The blacktip shark has a stout, fusiform body with a pointed snout, long gill slits, and no ridge between the dorsal fins. 
+                        Most individuals have black tips or edges on the pectoral, dorsal, pelvic, and caudal fins. It usually attains a length of 1.5 m (4.9 ft).</p> 
+                    <p>Normally wary of humans, blacktip sharks can become aggressive in the presence of food and have been responsible for a number of attacks on people</p>
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/Blacktip.jpg" style="max-width: 100%; max-height: 100%;">
+                </div> 
+                <div id="Bronze Whaler Shark" class="tabsharks">
+                    <h3>Bronze Whaler Shark</h3>
+                    <p>The copper shark (Carcharhinus brachyurus), bronze whaler, or narrowtooth shark, is a species of requiem shark, family Carcharhinidae, 
+                        and the only member of its genus found mostly at temperate latitudes.</p>
+                    <p>The copper shark is difficult to distinguish from other large requiem sharks. It is characterized by its narrow, hook-shaped upper teeth, 
+                        lack of a prominent ridge between the dorsal fins, and plain bronze coloration.</p> 
+                    <p>Copper sharks only attack humans infrequently, but the species places tenth in the number of unprovoked attacks on people</p>
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/Bronze-whaler-shark-PL-large.png" style="max-width: 100%; max-height: 100%;">
+                </div>
+                <div id="Bull Shark" class="tabsharks">
+                    <h3>Bull Shark</h3>
+                    <p>The bull shark (Carcharhinus leucas), also known as the "Zambezi shark" (informally "zambi") in Africa, and "Lake Nicaragua shark" in Nicaragua, 
+                        is a requiem shark commonly found worldwide in warm, shallow waters along coasts and in rivers.</p>
+                    <p>It is known for its aggressive nature, and presence in warm, shallow brackish and freshwater systems including estuaries and rivers.</p> 
+                    <p>Larger-sized bull sharks are probably responsible for the majority of near-shore shark attacks, including many bites attributed to other species.</p>
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/bull.jpg" style="max-width: 100%; max-height: 100%;">
+                </div>
+                <div id="Goblin Shark" class="tabsharks">
+                    <h3>Goblin Shark</h3>
+                    <p>The goblin shark (Mitsukurina owstoni) is a rare species of deep-sea shark. Sometimes called a "living fossil", it is the only extant 
+                        representative of the family Mitsukurinidae, a lineage some 125 million years old.</p>
+                    <p>Goblin sharks are benthopelagic creatures that inhabit upper continental slopes, submarine canyons, and seamounts throughout the world at depths greater than 100 m (330 ft)</p> 
+                    <p>This pink-skinned animal has a distinctive profile with an elongated, flat snout, and highly protrusible jaws containing prominent nail-like teeth. It is usually between 3 and 4 m (10 and 13 ft) long when mature.</p>
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/goblin.jpg" style="max-width: 100%; max-height: 100%;">
+                </div>
+                <div id="Great White Shark" class="tabsharks">
+                    <h3>Great White Shark</h3>
+                    <p>The great white shark (Carcharodon carcharias), also known as the white shark, white pointer, or simply great white, is a species of large mackerel 
+                        shark which can be found in the coastal surface waters of all the major oceans.</p>
+                    <p>The great white shark has no known natural predators other than, on very rare occasions, the killer whale.[11] It is arguably the world's largest-known extant macropredatory fish, 
+                        and is one of the primary predators of marine mammals, up to the size of large baleen whales. </p> 
+                    <p>This shark is also known to prey upon a variety of other marine animals, including fish, and seabirds. It is the only known surviving species of its genus Carcharodon, 
+                        and is responsible for more recorded human bite incidents than any other shark</p>
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/greatwhite.jpg" style="max-width: 100%; max-height: 100%;">
+                </div> 
+                <div id="Hammerhead Shark" class="tabsharks">
+                    <h3>Hammerhead Shark</h3>
+                    <p>The hammerhead sharks are a group of sharks that form the family Sphyrnidae, so named for the unusual and distinctive structure of their heads, 
+                        which are flattened and laterally extended into a "hammer" shape called a cephalofoil.</p>
+                    <p>Many, but not necessarily mutually exclusive, functions have been postulated for the cephalofoil, including sensory reception, manoeuvering, and prey manipulation.
+                            The cephalofoil gives the shark superior binocular vision and depth perception</p>
+                    <p>Hammerheads are found worldwide in warmer waters along coastlines and continental shelves. Unlike most sharks, 
+                        some hammerhead species usually swim in schools during the day, becoming solitary hunters at night.</p> 
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/hammerhead.jpg" style="max-width: 100%; max-height: 100%;">
+                </div>
+                <div id="Tiger Shark" class="tabsharks">
+                    <h3>Tiger Shark</h3>
+                    <p>The tiger shark (Galeocerdo cuvier[3]) is a species of requiem shark and the only extant member of the genus Galeocerdo.
+                        It is a large macropredator, capable of attaining a length over 5 m (16 ft 5 in)</p>
+                    <p>Populations are found in many tropical and temperate waters, especially around central Pacific islands.
+                         Its name derives from the dark stripes down its body, which resemble a tiger's pattern, but fade as the shark matures.</p>
+                    <p>The tiger shark is second only to the great white in recorded fatal attacks on humans, but these events are still exceedingly rare</p> 
+                    <img src="https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/tiger.jpg" style="max-width: 100%; max-height: 100%;">
+                </div>             
+            </div>
+        </div>           
+    </div>
+
+    <script type="text/javascript">
+        var yourVlSpec = "https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/chart.vg.json";
+        vegaEmbed('#vis', yourVlSpec);
+        var yourVlSpec = "https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/chart1.vg.json";
+        vegaEmbed('#vis2', yourVlSpec);
+        var yourVlSpec = "https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/chart2.vg.json";
+        vegaEmbed('#vis3', yourVlSpec);
+        var yourVlSpec = "https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/chart3.vg.json";
+        vegaEmbed('#vis4', yourVlSpec);
+        var yourVlSpec = "https://raw.githubusercontent.com/bmooMonash/FIT3176_Assignment2/main/chart4.vg.json";
+        vegaEmbed('#vis5', yourVlSpec);
+
+        function Shark(sharkName, event) {
+        var tabsharks, tabtabs, i;
+        tabsharks = document.getElementsByClassName("tabsharks");
+        for (i = 0; i < tabsharks.length; i++) {
+            tabsharks[i].style.display = "none";
+        }
+        tabtabs = document.getElementsByClassName("tabtabs");
+        for (i = 0; i < tabtabs.length; i++) {
+            tabtabs[i].className = tabtabs[i].className.replace(" active", "");
+        }
+        document.getElementById(sharkName).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+
+    document.getElementsByClassName("tabtabs")[0].click();
+      </script>
+  </body>
+</html>
